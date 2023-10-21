@@ -1,4 +1,4 @@
-import Elysia from "elysia";
-import { login } from "./signin";
+import Elysia from "elysia"
+import { login } from "./signin"
 
-export const authGroup = new Elysia().use(login);
+export const authGroup = new Elysia().use(login)

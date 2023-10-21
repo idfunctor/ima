@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-core";
-import { z } from "zod";
+import { createEnv } from "@t3-oss/env-core"
+import { z } from "zod"
 
 const env = createEnv({
   server: {
@@ -11,24 +11,24 @@ const env = createEnv({
       .optional()
       .refine((s) => {
         // not needed for local only
-        const type = process.env.DATABASE_CONNECTION_TYPE;
+        const type = process.env.DATABASE_CONNECTION_TYPE
         return type === "remote" || type === "local-replica"
           ? s && s.length > 0
-          : true;
+          : true
       }),
     NODE_ENV: z.enum(["development", "production"]),
     GITHUB_CLIENT_ID: z.string(),
     GITHUB_CLIENT_SECRET: z.string(),
   },
   runtimeEnv: process.env,
-});
+})
 
 const args = {
   // watch: process.argv.includes("--watch"),
   // liveReload: true,
-};
+}
 
 export const config = {
   env,
   args,
-};
+}

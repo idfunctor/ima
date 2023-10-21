@@ -1,19 +1,19 @@
-import { Suspense } from "beth-stack/jsx";
-import { Elysia } from "elysia";
-import { authed } from "../auth/middleware";
-import { BaseHtml } from "../components/base";
-import { InitialTweetList, TweetCreationForm } from "../components/tweets";
-import { ctx } from "../context";
+// import { Suspense } from "beth-stack/jsx";
+import { Elysia } from "elysia"
+// import { authed } from "../auth/middleware";
+import { BaseHtml } from "../components/base"
+import { InitialTweetList, TweetCreationForm } from "../components/tweets"
+import { ctx } from "../context"
 
 export const index = new Elysia()
   .use(ctx)
   .derive(async (ctx) => {
-    const authRequest = ctx.auth.handleRequest(ctx);
-    const session = await authRequest.validate();
+    const authRequest = ctx.auth.handleRequest(ctx)
+    const session = await authRequest.validate()
 
-    return { session };
+    return { session }
   })
-  .get("/", async ({ htmlStream, session, db }) => {
+  .get("/", async ({ htmlStream, session }) => {
     return htmlStream(() => (
       <BaseHtml>
         <div class="flex flex-col items-center py-3">
@@ -42,5 +42,5 @@ export const index = new Elysia()
           <InitialTweetList />
         </div>
       </BaseHtml>
-    ));
-  });
+    ))
+  })

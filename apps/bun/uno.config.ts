@@ -1,5 +1,5 @@
-import transformerVariantGroup from "@unocss/transformer-variant-group";
-import { defineConfig, presetIcons, presetWebFonts, presetWind } from "unocss";
+import transformerVariantGroup from "@unocss/transformer-variant-group"
+import { defineConfig, presetIcons, presetWebFonts, presetWind } from "unocss"
 
 export default defineConfig({
   cli: {
@@ -10,4 +10,4 @@ export default defineConfig({
   },
   presets: [presetWind(), presetIcons(), presetWebFonts()],
   transformers: [transformerVariantGroup()],
-});
+})

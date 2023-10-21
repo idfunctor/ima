@@ -1,19 +1,19 @@
-import { OAuthRequestError } from "@lucia-auth/oauth";
-import Elysia from "elysia";
-import { parseCookie, serializeCookie } from "lucia/utils";
-import { githubAuth } from "../../auth";
-import { BaseHtml } from "../../components/base";
-import { config } from "../../config";
-import { ctx } from "../../context";
+import { OAuthRequestError } from "@lucia-auth/oauth"
+import Elysia from "elysia"
+import { parseCookie, serializeCookie } from "lucia/utils"
+import { githubAuth } from "../../auth"
+import { BaseHtml } from "../../components/base"
+import { config } from "../../config"
+import { ctx } from "../../context"
 
 export const login = new Elysia()
   .use(ctx)
   .get("/login", async (ctx) => {
-    const authRequest = ctx.auth.handleRequest(ctx);
-    const session = await authRequest.validate();
+    const authRequest = ctx.auth.handleRequest(ctx)
+    const session = await authRequest.validate()
     if (session) {
-      ctx.set.redirect = "/";
-      return;
+      ctx.set.redirect = "/"
+      return
     }
 
     return ctx.html(() => (
@@ -96,55 +96,55 @@ export const login = new Elysia()
           </form>
         </div>
       </BaseHtml>
-    ));
+    ))
   })
   .get("/login/github", async ({ set }) => {
-    const [url, state] = await githubAuth.getAuthorizationUrl();
+    const [url, state] = await githubAuth.getAuthorizationUrl()
 
     const stateCookie = serializeCookie("github_oauth_state", state, {
       maxAge: 60 * 60,
       secure: config.env.NODE_ENV === "production",
       httpOnly: true,
       path: "/",
-    });
+    })
 
-    set.headers["Set-Cookie"] = stateCookie;
-    set.redirect = url.toString();
+    set.headers["Set-Cookie"] = stateCookie
+    set.redirect = url.toString()
   })
   .get(
     "/login/github/callback",
     async ({ request, log, path, query, set, auth }) => {
-      const { code, state } = query;
+      const { code, state } = query
 
-      const cookies = parseCookie(request.headers.get("Cookie") ?? "");
-      const storedState = cookies.github_oauth_state;
+      const cookies = parseCookie(request.headers.get("Cookie") ?? "")
+      const storedState = cookies.github_oauth_state
 
       if (!storedState || !state || storedState !== state || !code) {
-        set.status = 400;
-        return "Nice try";
+        set.status = 400
+        return "Nice try"
       }
 
       try {
         const { getExistingUser, githubUser, createUser } =
-          await githubAuth.validateCallback(code);
+          await githubAuth.validateCallback(code)
 
         const getUser = async () => {
-          const existingUser = await getExistingUser();
-          if (existingUser) return existingUser;
+          const existingUser = await getExistingUser()
+          if (existingUser) return existingUser
           const user = await createUser({
             attributes: {
               handle: githubUser.login,
             },
-          });
-          return user;
-        };
+          })
+          return user
+        }
 
-        const user = await getUser();
+        const user = await getUser()
         const session = await auth.createSession({
           userId: user.userId,
           attributes: {},
-        });
-        const sessionCookie = auth.createSessionCookie(session);
+        })
+        const sessionCookie = auth.createSessionCookie(session)
         // redirect to profile page
         return new Response(null, {
           headers: {
@@ -152,16 +152,16 @@ export const login = new Elysia()
             "Set-Cookie": sessionCookie.serialize(), // store session cookie
           },
           status: 302,
-        });
+        })
       } catch (e) {
         if (e instanceof OAuthRequestError) {
           // invalid code
-          set.status = 400;
-          return e.message;
+          set.status = 400
+          return e.message
         }
-        set.status = 500;
-        log.error(e);
-        return "Internal server error";
+        set.status = 500
+        log.error(e)
+        return "Internal server error"
       }
     },
-  );
+  )

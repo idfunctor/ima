@@ -50,6 +50,6 @@ const config = {
     // This rule doesn't seem to be working properly
     "@typescript-eslint/prefer-nullish-coalescing": "off",
   },
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -1,9 +1,9 @@
-import { liveReloadScript } from "beth-stack/dev";
-import { type PropsWithChildren } from "beth-stack/jsx";
-import { config } from "../config";
+import { liveReloadScript } from "beth-stack/dev"
+import { type PropsWithChildren } from "beth-stack/jsx"
+import { config } from "../config"
 
 const safeScript =
-  config.env.NODE_ENV === "development" ? liveReloadScript() : "";
+  config.env.NODE_ENV === "development" ? liveReloadScript() : ""
 
 export const BaseHtml = ({ children }: PropsWithChildren) => (
   <html>
@@ -28,4 +28,4 @@ export const BaseHtml = ({ children }: PropsWithChildren) => (
       {children}
     </body>
   </html>
-);
+)

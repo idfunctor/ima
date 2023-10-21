@@ -1,10 +1,10 @@
-import { blob, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { blob, sqliteTable, text } from "drizzle-orm/sqlite-core"
 
 export const user = sqliteTable("user", {
   id: text("id").primaryKey(),
   handle: text("handle").notNull(),
   // other user attributes
-});
+})
 
 export const session = sqliteTable("user_session", {
   id: text("id").primaryKey(),
@@ -17,7 +17,7 @@ export const session = sqliteTable("user_session", {
   idleExpires: blob("idle_expires", {
     mode: "bigint",
   }).notNull(),
-});
+})
 
 export const key = sqliteTable("user_key", {
   id: text("id").primaryKey(),
@@ -25,4 +25,4 @@ export const key = sqliteTable("user_key", {
     .notNull()
     .references(() => user.id),
   hashedPassword: text("hashed_password"),
-});
+})

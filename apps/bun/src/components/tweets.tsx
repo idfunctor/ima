@@ -1,5 +1,5 @@
-import { db } from "../db";
-import { tweets } from "../db/schema/tweets";
+import { db } from "../db"
+import { tweets } from "../db/schema/tweets"
 
 export function TweetCard({
   author: { handle },
@@ -7,12 +7,12 @@ export function TweetCard({
   content,
   id,
 }: {
-  createdAt: Date;
-  content: string;
+  createdAt: Date
+  content: string
   author: {
-    handle: string;
-  };
-  id: number;
+    handle: string
+  }
+  id: number
 }) {
   return (
     <div
@@ -39,7 +39,7 @@ export function TweetCard({
       </div>
       <div id="tweetDeleteError" />
     </div>
-  );
+  )
 }
 
 export async function InitialTweetList() {
@@ -53,9 +53,9 @@ export async function InitialTweetList() {
         },
       },
     },
-  });
+  })
 
-  const lastTweetTime = tweetData[tweetData.length - 1]?.createdAt;
+  const lastTweetTime = tweetData[tweetData.length - 1]?.createdAt
 
   return (
     <>
@@ -71,7 +71,7 @@ export async function InitialTweetList() {
         />
       </div>
     </>
-  );
+  )
 }
 
 export async function AdditionalTweetList({ after }: { after: Date }) {
@@ -86,9 +86,9 @@ export async function AdditionalTweetList({ after }: { after: Date }) {
         },
       },
     },
-  });
+  })
 
-  const lastTweetTime = tweetData[tweetData.length - 1]?.createdAt;
+  const lastTweetTime = tweetData[tweetData.length - 1]?.createdAt
 
   return (
     <>
@@ -104,7 +104,7 @@ export async function AdditionalTweetList({ after }: { after: Date }) {
         />
       )}
     </>
-  );
+  )
 }
 
 export function TweetCreationForm() {
@@ -133,5 +133,5 @@ export function TweetCreationForm() {
         </button>
       </form>
     </div>
-  );
+  )
 }
