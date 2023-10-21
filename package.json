@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "deps": "bun install --yarn"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "tsconfig": "*",
+    "turbo": "latest"
+  },
+  "overrides": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"
+  },
+  "name": "my-turborepo",
+  "packageManager": "bun@1.0.7",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

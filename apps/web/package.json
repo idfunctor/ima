@@ -1,0 +1,24 @@
+{
+  "name": "web",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^3.0.1",
+    "@astrojs/solid-js": "^3.0.2",
+    "@clerk/clerk-react": "^4.26.6",
+    "astro": "^3.3.2",
+    "preact": "^10.17.1",
+    "solid-js": "^1.7.11"
+  },
+  "overrides": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"
+  }
+}
