@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/preact": "^3.0.1",
     "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/node": "6.0.3",
     "@clerk/clerk-react": "^4.26.6",
     "astro": "^3.3.2",
     "preact": "^10.17.1",

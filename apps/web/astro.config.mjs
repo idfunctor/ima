@@ -4,6 +4,8 @@ import solid from '@astrojs/solid-js';
 
 // https://astro.build/config
 export default defineConfig({
+	output: "static",
+	base: '/app',
 	// Enable many frameworks to support all different kinds of components.
 	integrations: [
 		preact({ include: ['**/preact/*'], compat: true }),

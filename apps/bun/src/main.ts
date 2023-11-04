@@ -10,9 +10,24 @@ import { pages } from "./pages/*"
 const app = new Elysia()
   // .use(swagger())
   // @ts-expect-error idc
-  .use(staticPlugin())
+  .use(staticPlugin({ prefix: "/public" }))
   .use(api)
   .use(pages)
+  .get("app*", async (ctx) => {
+    let path = ctx.path.split("/").slice(2).join("/")
+    const isPathWithExtension = path.split(".").length > 1
+    path = path.endsWith("/") ? path : !isPathWithExtension ? `${path}/` : path
+
+    const astroassetpath = "../web/dist"
+    const publicPath = isPathWithExtension
+      ? `${astroassetpath}/${path}`
+      : `${astroassetpath}/${path}/index.html`
+    const file = Bun.file(publicPath)
+    console.log(path, "++++", publicPath)
+
+    if (await file.exists()) return file
+    throw new Error("404")
+  })
   .onStart(({ log }) => {
     if (config.env.NODE_ENV === "development") {
       void fetch("http://localhost:3001/restart")

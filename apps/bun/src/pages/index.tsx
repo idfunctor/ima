@@ -10,7 +10,6 @@ export const index = new Elysia()
   .derive(async (ctx) => {
     const authRequest = ctx.auth.handleRequest(ctx)
     const session = await authRequest.validate()
-
     return { session }
   })
   .get("/", async ({ htmlStream, session }) => {
