@@ -1,4 +1,5 @@
 import { createResource, createSignal } from 'solid-js'
+import { apiClient } from '../../edenTreaty';
 
 /** A counter written with Solid */
 export default function SolidCounter({ children }) {
@@ -20,12 +21,7 @@ export default function SolidCounter({ children }) {
 }
 
 export async function getTweets({ tweetId }: { tweetId: number }) {
-	// if (query.trim() === "") return [];
-	const response = await fetch(
-	  `/e/api/tweets/${tweetId}`
-	);
-	const results = await response.json();
-	return results;
-  }
+	return apiClient.tweets[2].get();
+}
   
   
