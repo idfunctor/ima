@@ -10,4 +10,4 @@ export default defineConfig({
   },
   presets: [presetWind(), presetIcons(), presetWebFonts()],
   transformers: [transformerVariantGroup()],
-})
+}) as any

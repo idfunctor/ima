@@ -6,7 +6,8 @@ export default function SolidCounter({ children }) {
 	const [count, setCount] = createSignal(0)
 	const add = () => setCount(count() + 1)
 	const subtract = () => setCount(count() - 1)
-
+	const [data] = createResource({ tweetId: 2 }, getTweets);
+	console.log(data);
 	return (
 		<>
 			<div id="solid" class="counter">

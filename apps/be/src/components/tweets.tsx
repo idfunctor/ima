@@ -30,7 +30,7 @@ export function TweetCard({
         <span class="text-sm text-gray-500">{createdAt.toLocaleString()}</span>
         <button
           class="i-lucide-x text-lg text-red-500"
-          hx-delete={`/api/tweets/${id}`}
+          hx-delete={`/e/api/tweets/${id}`}
           hx-target={`#tweet-${id}`}
           hx-swap="outerHTML"
           hx-target-4xx="next #tweetDeleteError"
@@ -55,6 +55,8 @@ export async function InitialTweetList() {
     },
   })
 
+  console.log(tweetData)
+
   const lastTweetTime = tweetData[tweetData.length - 1]?.createdAt
 
   return (
@@ -64,7 +66,7 @@ export async function InitialTweetList() {
           <TweetCard {...tweet} />
         ))}
         <div
-          hx-get={`/api/tweets?after=${lastTweetTime?.toISOString()}`}
+          hx-get={`/e/api/tweets/?after=${lastTweetTime?.toISOString()}`}
           hx-swap="beforeend"
           hx-target="#tweetList"
           hx-trigger="revealed"
@@ -97,7 +99,7 @@ export async function AdditionalTweetList({ after }: { after: Date }) {
       ))}
       {lastTweetTime && (
         <div
-          hx-get={`/api/tweets?after=${lastTweetTime.toISOString()}`}
+          hx-get={`/e/api/tweets/?after=${lastTweetTime.toISOString()}`}
           hx-swap="beforeend"
           hx-target="#tweetList"
           hx-trigger="revealed"
@@ -112,7 +114,7 @@ export function TweetCreationForm() {
     <div class="rounded-lg border p-4 shadow-md">
       <h2 class="mb-4 text-xl font-bold">Create a new Tweet</h2>
       <form
-        hx-post="/api/tweets"
+        hx-post="/e/api/tweets"
         hx-swap="afterbegin"
         hx-target="#tweetList"
         _="on submit target.reset()"

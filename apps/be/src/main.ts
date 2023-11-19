@@ -7,24 +7,30 @@ import { config } from "./config"
 import { api } from "./controllers/*"
 import { pages } from "./pages/*"
 
-const app = new Elysia()
-  // .use(swagger())
-  // @ts-expect-error idc
-  .use(staticPlugin())
-  .use(api)
-  .use(pages)
-  .onStart(({ log }) => {
-    if (config.env.NODE_ENV === "development") {
-      void fetch("http://localhost:3001/restart")
-      // log.debug("🦊 Triggering Live Reload");
-      console.log("🦊 Triggering Live Reload")
-    }
+//@ts-ignore
+const app =
+  new Elysia({
+    prefix: '/e',
   })
-  .onError(({ code, error, request, log }) => {
-    // log.error(` ${request.method} ${request.url}`, code, error);
-    console.error(error)
-  })
-  .listen(3000)
+    .use(
+      //@ts-expect-error
+      staticPlugin({})
+    )
+    // .use(swagger())
+    .use(api)
+    .use(pages)
+    .onStart(() => {
+      if (config.env.NODE_ENV === "development") {
+        void fetch("http://localhost:3001/restart")
+        // log.debug("🦊 Triggering Live Reload");
+        console.log("🦊 Triggering Live Reload")
+      }
+    })
+    .onError(({ code, error, request }) => {
+      // log.error(` ${request.method} ${request.url}`, code, error);
+      console.error(error)
+    })
+    .listen(3000)
 
 export type App = typeof app
 export type TElysiaApp = typeof app
