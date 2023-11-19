@@ -1,13 +1,15 @@
 import { logger } from "@bogeychan/elysia-logger"
-// import { Logger } from "@bogeychan/elysia-logger/types";
+import type { Logger } from "@bogeychan/elysia-logger/types";
 import { cron } from "@elysiajs/cron"
 import { HoltLogger } from "@tlscipher/holt"
 import { bethStack } from "beth-stack/elysia"
 import { Elysia } from "elysia"
 import pretty from "pino-pretty"
+import type { pino } from 'pino';
 import { auth } from "../auth"
 import { config } from "../config"
 import { client, db } from "../db"
+import { _INTERNAL_ElysiaLoggerPlugin } from "@bogeychan/elysia-logger/types"
 
 const stream = pretty({
   colorize: true,
@@ -21,6 +23,7 @@ const loggerConfig =
       }
     : { level: config.env.LOG_LEVEL }
 
+
 export const ctx = new Elysia({
   name: "@app/ctx",
 })
@@ -28,7 +31,22 @@ export const ctx = new Elysia({
   .decorate("config", config)
   .decorate("auth", auth)
   .use(bethStack())
-  .use(logger(loggerConfig))
+  // .use(logger({
+  //   ...loggerConfig,
+  //   autoLogging: true,
+  //   // default
+  //   // autoLogging: {
+  //   //   ignore(ctx) {
+  //   //     return true; // ignore logging for requests based on condition
+  //   //   }
+  //   // }
+  // }))
+  .use(logger(loggerConfig) as unknown as Elysia<'', {
+    request: {
+        log: pino.Logger<typeof loggerConfig>;
+    };
+    store: Elysia['store'];
+}>)
   .use(
     // @ts-expect-error idc
     config.env.NODE_ENV === "development"

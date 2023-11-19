@@ -28,11 +28,11 @@ type RouterPattern<T extends string> =
     ? `${Start}${string}`
     : T
 
-type StartsWithApi<T extends string> = T extends `${"/api"}${infer Rest}`
+type StartsWithApi<T extends string> = T extends `${"/e/api"}${infer Rest}`
   ? T
   : never
 
-type DoesntStartWithApi<T extends string> = T extends `${"/api"}${infer Rest}`
+type DoesntStartWithApi<T extends string> = T extends `${"/e/api"}${infer Rest}`
   ? never
   : T
 

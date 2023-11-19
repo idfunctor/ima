@@ -23,7 +23,7 @@ export const index = new Elysia()
                 Hi! {session.user.handle}
               </h1>
               <button
-                hx-post="/api/auth/signout"
+                hx-post="/e/api/auth/signout"
                 class="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
               >
                 Sign Out
@@ -32,7 +32,7 @@ export const index = new Elysia()
             </>
           ) : (
             <a
-              href="/login"
+              href="/e/login"
               hx-boost="false"
               class="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
             >
