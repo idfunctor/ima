@@ -27,6 +27,7 @@ const app = new Elysia()
   .listen(3000)
 
 export type App = typeof app
+export type TElysiaApp = typeof app
 
 console.log(
   `app is listening on http://${app.server?.hostname}:${app.server?.port}`,
