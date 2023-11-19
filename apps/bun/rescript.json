@@ -1,5 +1,5 @@
 {
-  "name": "your-project-name",
+  "name": "ima-be",
   "sources": [
     {
       "dir": "resrc",
@@ -13,7 +13,6 @@
     }
   ],
   "jsx": { "version": 4 },
-  "bs-dependencies": ["@rescript/react"],
   "suffix": ".bs.js",
   "gentypeconfig": {
     "language": "typescript",
