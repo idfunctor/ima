@@ -21,31 +21,31 @@ importers:
   apps/bun:
     dependencies:
       '@bogeychan/elysia-logger':
-        specifier: 0.0.9
-        version: 0.0.9(elysia@0.7.4)
+        specifier: ^0.0.13
+        version: 0.0.13(elysia@0.7.29)
       '@elysiajs/cron':
         specifier: ^0.6.0
-        version: 0.6.0(croner@7.0.5)(elysia@0.7.4)
+        version: 0.6.0(croner@7.0.5)(elysia@0.7.29)
       '@elysiajs/static':
         specifier: ^0.6.0
-        version: 0.6.0(elysia@0.7.4)
+        version: 0.6.0(elysia@0.7.29)
       '@elysiajs/swagger':
         specifier: ^0.6.2
-        version: 0.6.2(elysia@0.7.4)
+        version: 0.6.2(elysia@0.7.29)
       '@iconify-json/logos':
-        specifier: ^1.1.37
+        specifier: ^1.1.38
         version: 1.1.38
       '@iconify-json/lucide':
-        specifier: ^1.1.128
+        specifier: ^1.1.141
         version: 1.1.141
       '@libsql/client':
         specifier: 0.3.5-pre.13
         version: 0.3.5-pre.13
       '@lucia-auth/adapter-sqlite':
-        specifier: ^2.0.0
+        specifier: ^2.0.1
         version: 2.0.1(@libsql/client@0.3.5-pre.13)(better-sqlite3@8.7.0)(lucia@2.7.4)
       '@lucia-auth/oauth':
-        specifier: ^3.2.0
+        specifier: ^3.5.0
         version: 3.5.0(lucia@2.7.4)
       '@t3-oss/env-core':
         specifier: ^0.6.1
@@ -66,80 +66,80 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(@sinclair/typebox@0.31.26)(drizzle-orm@0.28.6)
       elysia:
-        specifier: 0.7.4
-        version: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+        specifier: ^0.7.29
+        version: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
       lucia:
-        specifier: ^2.6.0
+        specifier: ^2.7.4
         version: 2.7.4
       pino-pretty:
-        specifier: ^10.2.0
+        specifier: ^10.2.3
         version: 10.2.3
       zod:
-        specifier: ^3.22.2
+        specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
-        specifier: ^4.1.0
+        specifier: ^4.1.1
         version: 4.1.1(prettier@3.1.0)
       '@kitajs/ts-html-plugin':
-        specifier: ^1.0.1
-        version: 1.3.1(@kitajs/html@3.0.8)(typescript@5.2.2)
+        specifier: ^1.3.3
+        version: 1.3.3(@kitajs/html@3.0.10)(typescript@5.2.2)
       '@total-typescript/ts-reset':
         specifier: ^0.5.1
         version: 0.5.1
       '@types/eslint':
-        specifier: ^8.44.2
+        specifier: ^8.44.7
         version: 8.44.7
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.7.0
+        specifier: ^6.11.0
         version: 6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.7.0
+        specifier: ^6.11.0
         version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
       '@unocss/transformer-variant-group':
         specifier: ^0.55.7
         version: 0.55.7
       better-sqlite3:
-        specifier: ^8.6.0
+        specifier: ^8.7.0
         version: 8.7.0
       bun-types:
         specifier: latest
         version: 1.0.13
       concurrently:
-        specifier: ^8.2.1
+        specifier: ^8.2.2
         version: 8.2.2
       drizzle-kit:
         specifier: ^0.19.13
         version: 0.19.13
       eslint:
-        specifier: ^8.49.0
+        specifier: ^8.54.0
         version: 8.54.0
       eslint-config-prettier:
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.54.0)
       eslint-config-turbo:
-        specifier: ^1.10.14
+        specifier: ^1.10.16
         version: 1.10.16(eslint@8.54.0)
       eslint-plugin-import:
-        specifier: ^2.28.1
+        specifier: ^2.29.0
         version: 2.29.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)
       eslint-plugin-isaacscript:
-        specifier: ^3.5.5
+        specifier: ^3.5.7
         version: 3.5.7(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2)
       eslint-plugin-prettier:
-        specifier: ^5.0.0
+        specifier: ^5.0.1
         version: 5.0.1(@types/eslint@8.44.7)(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
       pino:
-        specifier: ^8.15.1
+        specifier: ^8.16.2
         version: 8.16.2
       prettier:
-        specifier: ^3.0.3
+        specifier: ^3.1.0
         version: 3.1.0
       prettier-plugin-tailwindcss:
-        specifier: ^0.5.4
+        specifier: ^0.5.7
         version: 0.5.7(@ianvs/prettier-plugin-sort-imports@4.1.1)(prettier@3.1.0)
       rescript:
-        specifier: ^11.0.0-rc.4
+        specifier: 11.0.0-rc.5
         version: 11.0.0-rc.5
       typescript:
         specifier: ^5.2.2
@@ -638,12 +638,12 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@bogeychan/elysia-logger@0.0.9(elysia@0.7.4):
-    resolution: {integrity: sha512-gwwOuIpQoOjDi3GN1kLUctEno3//giwruSZJUYe5EAx6luFQrQ9dy3c7+QqpJ+H1S5i7l/8WX8KSH/iaJZ8Mmw==}
+  /@bogeychan/elysia-logger@0.0.13(elysia@0.7.29):
+    resolution: {integrity: sha512-j3Fllw6nRs6Xzi8bT0E0WfVb+Q2oKKfz1ATUfb5qHREy+qqJmdCm+WIUNnadv+bwzxq/oWAOOSR1A840cbBH1A==}
     peerDependencies:
-      elysia: '>= 0.6.19'
+      elysia: '>= 0.7.6'
     dependencies:
-      elysia: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+      elysia: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
       pino: 8.16.2
     dev: false
 
@@ -684,7 +684,7 @@ packages:
     resolution: {integrity: sha512-ps5qF0tMxWRVu+V5gvCRrQNqlY92aTnIKdq27gm9LZMSdaKYZt6AVvSK1dlUMzs6Rt0Jm80b+eWct6xShBKhIw==}
     dev: true
 
-  /@elysiajs/cron@0.6.0(croner@7.0.5)(elysia@0.7.4):
+  /@elysiajs/cron@0.6.0(croner@7.0.5)(elysia@0.7.29):
     resolution: {integrity: sha512-MusHfGeB1hxsd5r8sx6H02G/2kmaN2kKPzQb7+sQLjNe/1EUyadlwJldAMRZDF5fDLgKOP6QGOHHY6nq1Blnag==}
     peerDependencies:
       croner: '>= 6.0.0'
@@ -694,24 +694,24 @@ packages:
         optional: true
     dependencies:
       croner: 7.0.5
-      elysia: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+      elysia: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
     dev: false
 
-  /@elysiajs/static@0.6.0(elysia@0.7.4):
+  /@elysiajs/static@0.6.0(elysia@0.7.29):
     resolution: {integrity: sha512-06M0J3HXQiX3BivJIMbL3WNXzudzQNHIPlU0JBZo2/gp8dX8GGOZbjIhyF6j4legEQE86omTBRHt2dUxb4yZZg==}
     peerDependencies:
       elysia: '>= 0.5.12'
     dependencies:
-      elysia: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+      elysia: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
     dev: false
 
-  /@elysiajs/swagger@0.6.2(elysia@0.7.4):
+  /@elysiajs/swagger@0.6.2(elysia@0.7.29):
     resolution: {integrity: sha512-dhS97Wg1w6DLRRhJjhkPydNiK7qH9VdiqbGI6GpKQmHxVrbuC3pN0Msd0sh1g2AuuM7zyWUD0swuti5xAd6cjg==}
     peerDependencies:
       elysia: '>= 0.6.7'
     dependencies:
       '@types/lodash.clonedeep': 4.5.9
-      elysia: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+      elysia: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
       lodash.clonedeep: 4.5.0
     dev: false
 
@@ -1233,24 +1233,24 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@kitajs/html@3.0.8(@kitajs/ts-html-plugin@1.3.1):
-    resolution: {integrity: sha512-A4JX6xNDJdbwVA/+ugqLCP9nlNGh3BCmEymzeNoZY0GoLkSoI3hqPz7jo07qV1gWJqI+uMjR+qcxRMbancKvPw==}
+  /@kitajs/html@3.0.10(@kitajs/ts-html-plugin@1.3.3):
+    resolution: {integrity: sha512-3SblgDWCJOVrXFTf5dciXF3sj96CazDfHteuXHX8OHibjdYAmyLj3j0+s3y6B0ppcICR4x0i90CkkOvk2q+M7Q==}
     engines: {node: '>=12'}
     peerDependencies:
       '@kitajs/ts-html-plugin': '>=1.2.0'
     dependencies:
-      '@kitajs/ts-html-plugin': 1.3.1(@kitajs/html@3.0.8)(typescript@5.2.2)
+      '@kitajs/ts-html-plugin': 1.3.3(@kitajs/html@3.0.10)(typescript@5.2.2)
       csstype: 3.1.2
     dev: true
 
-  /@kitajs/ts-html-plugin@1.3.1(@kitajs/html@3.0.8)(typescript@5.2.2):
-    resolution: {integrity: sha512-sgvMX6JYm0tnsKqIdiXjJ/jQLdTcnvExJWq/oEcjvGqO6PmApYX7Ni8sLVackA6Mu+zuZEDFx2VK4BlMrpTakA==}
+  /@kitajs/ts-html-plugin@1.3.3(@kitajs/html@3.0.10)(typescript@5.2.2):
+    resolution: {integrity: sha512-qam/xc4zgP9e/CeSlBcpmJ5BOf9jCUr7qee6KcxzuFXN8fFf8IeNph46ukrQCXk0tEiItd48BnkkL0jEAozdeg==}
     hasBin: true
     peerDependencies:
-      '@kitajs/html': ^3.0.8
+      '@kitajs/html': ^3.0.10
       typescript: ^5.2.2
     dependencies:
-      '@kitajs/html': 3.0.8(@kitajs/ts-html-plugin@1.3.1)
+      '@kitajs/html': 3.0.10(@kitajs/ts-html-plugin@1.3.3)
       chalk: 4.1.2
       tslib: 2.6.2
       typescript: 5.2.2
@@ -1553,7 +1553,7 @@ packages:
       typescript: ^5.0.0
     dependencies:
       chalk: 5.3.0
-      elysia: 0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2)
+      elysia: 0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@sinclair/typebox'
@@ -2918,13 +2918,13 @@ packages:
   /convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  /cookie-signature@1.2.1:
-    resolution: {integrity: sha512-78KWk9T26NhzXtuL26cIJ8/qNHANyJ/ZYrmEXFzUmhZdjpBv+DlWlOANRTGBt48YcyslsLrj0bMLFTmXvLRCOw==}
-    engines: {node: '>=6.6.0'}
-    dev: false
-
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
     dev: false
 
@@ -3282,10 +3282,10 @@ packages:
   /electron-to-chromium@1.4.588:
     resolution: {integrity: sha512-soytjxwbgcCu7nh5Pf4S2/4wa6UIu+A3p03U2yVr53qGxi1/VTR3ENI+p50v+UxqqZAfl48j3z55ud7VHIOr9w==}
 
-  /elysia@0.7.4(@sinclair/typebox@0.31.26)(typescript@5.2.2):
-    resolution: {integrity: sha512-zgyv8L9/jFiZafaRsg2FMfnwJsuevFPJzJ1Yr92c77GOmRgSX+w6pimMFMtM/Xd334e9J6EGgi+wI0inNK84jA==}
+  /elysia@0.7.29(@sinclair/typebox@0.31.26)(typescript@5.2.2):
+    resolution: {integrity: sha512-0CzAmK1ghNZtyqzpLVL0O+TRd0l3/6ZE6Z2PhJq8reqxRAS4qeJumgm4hz+vyv069dysGVhHbUeT7JFP0IBcFQ==}
     peerDependencies:
-      '@sinclair/typebox': '>= 0.28.10'
+      '@sinclair/typebox': '>= 0.31.0'
       openapi-types: '>= 12.0.0'
       typescript: '>= 5.0.0'
     peerDependenciesMeta:
@@ -3297,8 +3297,7 @@ packages:
         optional: true
     dependencies:
       '@sinclair/typebox': 0.31.26
-      cookie: 0.5.0
-      cookie-signature: 1.2.1
+      cookie: 0.6.0
       eventemitter3: 5.0.1
       fast-querystring: 1.1.2
       memoirist: 0.1.4
@@ -5790,6 +5789,7 @@ packages:
   /mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
+    requiresBuild: true
 
   /min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}

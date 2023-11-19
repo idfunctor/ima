@@ -16,7 +16,7 @@
     "react-dom": "npm:@preact/compat@latest"
   },
   "name": "my-turborepo",
-  "packageManager": "bun@1.0.7",
+  "packageManager": "pnpm@8.10.5",
   "workspaces": [
     "apps/*",
     "packages/*"

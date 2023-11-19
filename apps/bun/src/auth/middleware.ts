@@ -11,3 +11,4 @@ export const authed = new Elysia({
 
     return { session }
   })
+
