@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-import { createSignal } from 'solid-js'
-=======
 import { createResource, createSignal } from 'solid-js'
 import { apiClient } from '../../edenTreaty';
->>>>>>> Stashed changes
 
 /** A counter written with Solid */
 export default function SolidCounter({ children }) {
@@ -22,12 +18,9 @@ export default function SolidCounter({ children }) {
 		</>
 	)
 }
-<<<<<<< Updated upstream
-=======
 
 export async function getTweets({ tweetId }: { tweetId: number }) {
 	return apiClient.tweets[2].get();
 }
   
   
->>>>>>> Stashed changes
