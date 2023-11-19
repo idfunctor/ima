@@ -252,3 +252,5 @@ local.sqlite-shm
 local.sqlite-wal
 
 beth-cache.sqlite
+
+*.bs.js
