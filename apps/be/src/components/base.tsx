@@ -18,7 +18,7 @@ export const BaseHtml = ({ children }: PropsWithChildren) => (
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
       />
-      <link rel="stylesheet" href="/public/dist/unocss.css" />
+      <link rel="stylesheet" href="/e/public/dist/unocss.css" />
       <script>{safeScript}</script>
     </head>
     <body hx-boost="true" class="h-screen">

@@ -31,7 +31,7 @@ export const login = new Elysia()
             </a>
           </div>
           <form
-            hx-post="/api/auth/signInOrUp"
+            hx-post="/e/api/auth/signInOrUp"
             hx-swap="innerHTML"
             hx-target-4xx="#errorMessage"
             class="w-96 rounded-lg bg-white p-8 shadow-md"
@@ -85,7 +85,7 @@ export const login = new Elysia()
               </button>
               <a
                 hx-boost="false"
-                href="/login/github"
+                href="/e/login/github"
                 class="display-block rounded-lg bg-gray-800 p-2 text-center text-white transition duration-200 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
               >
                 Sign In with Github
@@ -145,6 +145,7 @@ export const login = new Elysia()
           attributes: {},
         })
         const sessionCookie = auth.createSessionCookie(session)
+        console.log(sessionCookie)
         // redirect to profile page
         return new Response(null, {
           headers: {

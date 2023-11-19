@@ -50,7 +50,6 @@ export const tweetsController = new Elysia({
       if (!tweet) {
         throw new Error("Failed to create tweet")
       }
-
       return (
         <TweetCard
           content={tweet.content}
@@ -107,6 +106,49 @@ export const tweetsController = new Elysia({
       }
 
       await db.delete(tweets).where(eq(tweets.id, tweetId))
+    },
+    {
+      params: t.Object({
+        tweetId: t.Numeric(),
+      }),
+    },
+  ).get(
+    "/:tweetId",
+    async ({ session, db, params: { tweetId }, set, log }) => {
+      if (!session) {
+        set.status = "Unauthorized"
+        return (
+          'HELLLOOOOO'
+        )
+      }
+      console.log(tweetId)
+
+      const [tweet] = await db
+        .select()
+        .from(tweets)
+        .where(eq(tweets.id, tweetId))
+
+      log.debug(tweet)
+
+      if (!tweet) {
+        set.status = "Not Found"
+        return (
+          <div id="tweetDeleteError" class="text-center text-red-500">
+            Tweet not found
+          </div>
+        )
+      }
+
+      if (tweet.authorId !== session.user.userId) {
+        set.status = "Unauthorized"
+        return (
+          <div id="tweetDeleteError" class="text-center text-red-500">
+            Unauthorized
+          </div>
+        )
+      }
+
+      return tweet;
     },
     {
       params: t.Object({

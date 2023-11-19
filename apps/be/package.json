@@ -39,7 +39,6 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-isaacscript": "^3.5.7",
     "eslint-plugin-prettier": "^5.0.1",
-    "pino": "^8.16.2",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "rescript": "11.0.0-rc.5",
@@ -64,6 +63,7 @@
     "drizzle-typebox": "^0.1.1",
     "elysia": "^0.7.29",
     "lucia": "^2.7.4",
+    "pino": "^8.16.2",
     "pino-pretty": "^10.2.3",
     "zod": "^3.22.4"
   },
